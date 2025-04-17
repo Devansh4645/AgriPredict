@@ -8,9 +8,13 @@ model_path = os.path.join(os.path.dirname(__file__), 'crop_recommendation.pkl')
 sc_path = os.path.join(os.path.dirname(__file__), 'standardscaler.pkl')
 mx_path = os.path.join(os.path.dirname(__file__), 'minmaxscaler.pkl')
 
-model = pickle.load(open(model_path, 'rb'))
-sc = pickle.load(open(sc_path, 'rb'))
-mx = pickle.load(open(mx_path, 'rb'))
+try:
+    model = pickle.load(open(model_path, 'rb'))
+    sc = pickle.load(open(sc_path, 'rb'))
+    mx = pickle.load(open(mx_path, 'rb'))
+except Exception as e:
+    print(f"Error loading models: {str(e)}")
+    raise
 
 app = Flask(__name__)
 
@@ -57,6 +61,7 @@ def predict():
 
         return render_template('home.html', result=result)
     except Exception as e:
+        print(f"Prediction error: {str(e)}")
         return render_template('home.html', result=f"Error: {str(e)}")
 
 if __name__ == "__main__":
