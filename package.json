@@ -1,0 +1,15 @@
+{
+  "name": "agripredict-master",
+  "version": "1.0.0",
+  "description": "* AgriPredict is a web app I built using machine learning, web development to empower agriculture industry. * AgriPredict is a revolutionary online platform designed to revolutionize the agricultural industry. * By harnessing the power of data analytics and artificial intelligence, we provide farmers with accurate and timely predictions for the crop they should grow in their fields. <p align=\"center\">   <img src=\"https://github.com/Shreyaa173/AgriPredict/blob/master/static/logo.png\" alt=\"Logo\" width=\"300\" /> </p>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vercel": "^41.6.1"
+  }
+}
